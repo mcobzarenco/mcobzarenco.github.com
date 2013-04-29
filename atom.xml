@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Variational Intelligence]]></title>
   <link href="http://mcobzarenco.github.io/atom.xml" rel="self"/>
   <link href="http://mcobzarenco.github.io/"/>
-  <updated>2013-04-29T13:28:29+01:00</updated>
+  <updated>2013-04-29T14:33:57+01:00</updated>
   <id>http://mcobzarenco.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Marius Cobzarenco]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
