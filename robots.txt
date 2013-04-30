@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://mcobzarenco.github.io/sitemap.xml 
+Sitemap: http://cobzarenco.me/sitemap.xml 
