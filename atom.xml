@@ -4,7 +4,7 @@
   <title><![CDATA[Variational Intelligence]]></title>
   <link href="http://cobzarenco.me/atom.xml" rel="self"/>
   <link href="http://cobzarenco.me/"/>
-  <updated>2013-05-09T15:16:15+01:00</updated>
+  <updated>2013-05-24T12:29:19+01:00</updated>
   <id>http://cobzarenco.me/</id>
   <author>
     <name><![CDATA[Marius Cobzarenco]]></name>
@@ -14,48 +14,21 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Zombie Ninjas Attack: A Machine Learning Perspective]]></title>
-    <link href="http://cobzarenco.me/blog/2013/04/30/zombie-ninjas-attack-a-machine-learning-perspective/"/>
-    <updated>2013-04-30T11:16:00+01:00</updated>
-    <id>http://cobzarenco.me/blog/2013/04/30/zombie-ninjas-attack-a-machine-learning-perspective</id>
-    <content type="html"><![CDATA[<p>Test fsdkjf
-sdf sdf sdf sd fsdf
-sdf
-sd
-fsd</p>
+    <title type="html"><![CDATA[Take 2.0]]></title>
+    <link href="http://cobzarenco.me/blog/2013/05/24/take-2.0/"/>
+    <updated>2013-05-24T12:26:00+01:00</updated>
+    <id>http://cobzarenco.me/blog/2013/05/24/take-2.0</id>
+    <content type="html"><![CDATA[<p>Two years ago, during my masters, I attempted (and failed) to write a series of tutorials on Bayesian machine learning (ML) in the real-world. The format was probably wrong as many of the things I wanted to write about are not settled enough to be tutorial material. A research scratchpad would have been better and hence this blog. I still think the tone was the right mixture. It was supposed to be written from a hacker’s perspective with a hypothetical target audience of people who are fanatical about good software design, feel macho about their multi-dimensional integrals, think frequentists are a waste of space and at the same time don’t shy away from dirty C pointer arithmetic when pushed into a corner.</p>
 
-<h2 id="nooo">NOOO</h2>
-<p>sdfsdfsd
-fsdfsdfsd</p>
+<p>Joke aside, in spite of their theoretical properties, Bayesian methods are under represented in the machine learning landscape, often confined to specialist areas. This may be partly due to the lack of good software, but also because the conventional wisdom today is <strong>big data + simple model &gt; small data + complex model</strong>. The move away from symbolic methods, fashionable in the early days of AI is one expression of the growing mountain of evidence that one can do much better by throwing data at the problem than by using a complex model. Using Google Translate as an example, Halevy, Norvig and Pereira make the point entertainingly in “The Unreasonable Effectiveness of Data” (<a href="http://www.csee.wvu.edu/~gidoretto/courses/2011-fall-cp/reading/TheUnreasonable%20EffectivenessofData_IEEE_IS2009.pdf">pdf</a>). The paper would make Chomsky see red and I am not talking about his political philosophy — <em>punchline rimshot</em></p>
 
-<p><strong>dsa</strong> <em>italic</em></p>
+<p>Bayesian models are notoriously intractable to do exact learning and inference in and tend to be dense, making distributed implementations problematic. The built-in guards against overfitting that these models provide are also rendered less relevant with the increasing amount of data. Off the top of my head, the only example of web-scale Bayesian ML I can think of is Microsoft Research’s <a href="http://research.microsoft.com/en-us/projects/trueskill/">TrueSkill</a>. In particular it uses expectation propagation, a variational method for doing deterministic approximate inference in probabilistic models. Unfortunately, variational methods are still not that well known, definitely not as well as the other family of methods for approximate inference, stochastic methods (i.e. Markov Chain Monte Carlo). In the quest for Bayesian ML for large datasets, variational methods seem most promising and will be one common theme of what I will post here. They also underpin the recent <em>deep learning</em> bandwagon which proposes a tractable-ish method for training highly non-linear complex models at large scale (the <em>holy grail</em> really).</p>
 
-<script type="math/tex; mode=display">\int_{-\infty}^{\infty}e^{-x^2} = \sqrt{\pi}</script>
+<p>When it comes to ML research, the academia famously ignores anything that has to do with collecting/storing/normalising/cleaning up the data . I will define <em>ingestion</em> vaguely as the process of taking some more or less unstructured data and putting into a neat dataset on which you can run a machine learning algorithm. It is the uninteresting part and it is hard to talk about the process as there tend not to be any unifying principles: <strong>it is always a mess, but a different mess every time</strong>. And although nothing about the ingestion process is rocket surgery, it still takes the majority of time of any practitioner. Simply, a second theme of the blog is not to ignore ingestion.</p>
 
-<h1 id="code">Code</h1>
+<p>One last thing on the subject of academic research in probabilistic machine learning. In their quest for brevity, papers often ignore numerical issues. The results that appear in print come from carefully crafted implementations, but the numerics are seldom mentioned. The paper’s contribution, the few lines of linear algebra stand a good chance of exploding in your face if put unmodified into a machine. I am not arguing that things should be different, after all talking about implementation details would be a distraction most of the time. It is harder to find an excuse for textbooks and too many of what tricks I learned come from random discussions over coffee. Although there will always be an element of experience, iteration and dark arts in devising stable numerical implementations for machine learning algorithms, we can at least try to do a better job. Numerical issues will be a third theme.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">import</span> <span class="nn">yaml</span>
-</span><span class="line"><span class="err">$$</span><span class="n">fsdfsd</span><span class="err">$$</span>
-</span><span class="line"><span class="n">s</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;dsadsa&quot;</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line"><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-</span><span class="line">	<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-</span><span class="line">		<span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class="line">
-</span><span class="line">	<span class="k">def</span> <span class="nf">t</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-</span><span class="line">		<span class="k">pass</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
+<p>Now, let’s get cracking.</p>
 ]]></content>
   </entry>
   
