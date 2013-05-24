@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Take 2.0"
+date: 2013-05-23 12:37
+comments: true
+published: true
+categories:
+---
+
+More than 2 years ago, during my masters, I attempted (and failed) to write a series of tutorials on Bayesian machine learning (ML) in the real-world. The format was probably wrong as many of the things I wanted to write about are not settled enough to be tutorial material. I still think the tone was the right mixture. It was supposed to be written from a hacker's perspective with a hypothetical target audience of people who are fanatical about good software design, feel macho about their multi-dimensional integrals, think frequentists are a waste of space and at the same time don't shy away from dirty C pointer arithmetic when pushed into a corner.
+
+Joke aside, in spite of their theoretical properties, Bayesian methods are under represented in the machine learning landscape, often confined to specialist areas. This may be partly due to the lack of good software, but also because the conventional wisdom today is **big data + simple model > small data + complex model**. Empirically, it does seem one can do much better by throwing data at the problem than by increasing the complexity of the model. Using Google Translate as an example, Halevy, Norvig and Pereira make the point entertainingly in "The Unreasonable Effectiveness of Data" ([pdf](http://www.csee.wvu.edu/~gidoretto/courses/2011-fall-cp/reading/TheUnreasonable%20EffectivenessofData_IEEE_IS2009.pdf)). The paper would make Chomsky see red and I am not talking about his political philosophy --- *punchline rimshot*.
+
+Bayesian models are notoriously hard to do learning and inference in and tend to be dense, making distributed implementations problematic. The built-in guards against overfitting they provide are also rendered less relevant with the increasing amount of data. Off the top of my head, the only example of web-scale Bayesian ML I can think of is Microsoft Research's [TrueSkill](http://research.microsoft.com/en-us/projects/trueskill/). In particular it uses expectation propagation, a variational method for doing deterministic approximate inference in probabilistic models. Unfortunately, variational methods are still not that well known, definitely not as well as the other family of methods for approximate inference, stochastic methods (i.e. Markov Chain Monte Carlo). In the quest for Bayesian ML for large datasets, variational methods seem promising and will be one common theme of what I will post here. They also underpin the recent _deep learning_ bandwagon which proposes a tractable method for training highly non-linear complex models at large scale (the _holy grail_ really).
+
+When it comes to ML research, the academia famously ignores anything that has to do with collecting/ingesting/normalising/cleaning up the data. As a shorthand, I will call _ingestion_ the whole process of taking some more or less unstructured data and putting into a neat dataset on which you can do ML. It is the uninteresting part and it is hard to talk about the process as there tend not to be any unifying principles: **it is always a mess, but a different mess every time**. And although nothing about the ingestion process is rocket surgery, it still takes the majority of time of any practitioner. A second theme of the blog will be not to ignore ingestion.

@@ -1,0 +1,27 @@
+---
+layout: post
+title: "Unreasonable Effectiveness"
+date: 2013-05-10 12:04
+comments: true
+published: false
+categories:
+---
+
+Please don't say "big data" when you mean "data". It's one word longer, misleading and it also happens to be one of my mini psychotic hates. It was painful enough to hear that "big data" is something you can't comfortably do in Excel (which should really render everything in the universe as big data), but this small [gem](http://www.forbes.com/sites/theyec/2013/04/29/3-steps-to-incorporate-big-data-into-your-small-business/?utm_campaign=techtwittersf&utm_source=twitter&utm_medium=social) on how to incorporate "big data" in your small business makes my eyes bleed. The term is well on its way of dislocating "synergy" as the most promoted catch phrase by professional managers everywhere.
+
+{% img center /images/posts/162783.strip.sunday.gif das %}
+
+
+{% blockquote %}
+Is more data always better? Hardly. In fact, if you’re looking for correlations—is thing X connected to thing Y, in a way that will give me information I can act on?—gathering more data could actually hurt you.
+
+“The information you can extract from any big data asymptotically diminishes as your data volume increases,” wrote Michael Wu, the “principal scientist of data analytics” at social media analysis firm Lithium. For those of you who don’t normally think in data, what that means is that past a certain point, your return on adding more data diminishes to the point that you’re only wasting time gathering more.
+{% endblockquote %}
+
+
+The Unreasonable Effectiveness of Data ([pdf](http://www.csee.wvu.edu/~gidoretto/courses/2011-fall-cp/reading/TheUnreasonable%20EffectivenessofData_IEEE_IS2009.pdf))
+
+- makes Chomsky see red and I'm not talking about his political philosophy
+
+
+The title is paraphrasing Eugene Wigner's 1960 classic paper "The Unreasonable Effectiveness of Mathematics in Natural Sciences", which I remember debating frequently in university. For one, Wigner really means physics by "natural science" and then the "effectiveness" of mathematics is almost tautological as physics only concerns itself with simple enough systems that can be studied with neat mathematics. Unfortunately for chemistry, biology or the social sciences which study the chaotic high-level systems emerging from simple fundamental physical laws, mathematics is not so unreasonably efficient. Not surprisingly, there have been many keen to point this out, just [search](http://scholar.google.co.uk/scholar?start=60&q=%22Unreasonable+ineffectiveness+of+mathematics%22) for "Unreasonable ineffectiveness of mathematics" on Google Scholar. There is still the question of why we are able to express physics as mathematics, although one can use computational complexity theory and a version of the anthropic principle to build a compelling argument that our universe needs to be on the _edge of chaos_ for complex life to evolve. It necessarily has some degree of order. I an not going to touch with a 16-foot pole why we, as humans, see _beauty_ in the natural laws we found and why we can use aesthetics to drive new physical theories; it's been a bit of a detour anyway considering I wanted to talk about "big data".
